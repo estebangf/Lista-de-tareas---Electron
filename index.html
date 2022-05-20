@@ -1,19 +1,37 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'">
-    <link href="./styles.css" rel="stylesheet">
-    <title>Hello World!</title>
-  </head>
-  <body>
-    <h1>Hello World!</h1>
-    We are using Node.js <span id="node-version"></span>,
-    Chromium <span id="chrome-version"></span>,
-    and Electron <span id="electron-version"></span>.
 
-    <!-- You can also require other files to run in this process -->
-    <script src="./renderer.js"></script>
-  </body>
+<head>
+  <link href="styles/style.css" rel="stylesheet">
+  <script defer src="js/appFunctions.js"></script>
+  <title>Ejemplo aplicación personalizada</title>
+</head>
+
+<body>
+  <div class="mainApp">
+    <div class="topBar">
+      <div class="titleBar">
+        <button id="showHideMenus" class="toggleButton"></button>
+        <img src="icons/icon_top_bar.png" alt="">
+        <div class="title">
+          Ejemplo aplicación personalizada
+        </div>
+      </div>
+      <div class="titleBarBtns">
+        <button id="minimizeBtn" class="topBtn minimizeBtn"></button>
+        <button id="maxResBtn" class="topBtn maximizeBtn"></button>
+        <button id="closeBtn" class="topBtn closeBtn"></button>
+      </div>
+    </div>
+    <div class="contentArea">
+      <div id="mySidebar" class="leftMenu">
+
+      </div>
+      <div class="contentPages">
+        <img class="iconElectron" src="images/electron.png" >
+      </div>
+    </div>
+  </div>
+</body>
+
 </html>

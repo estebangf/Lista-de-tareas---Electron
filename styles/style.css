@@ -1,0 +1,161 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    font-size: 10pt;
+    font-family: "Sageo UI", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #949AA7;
+    background-color: #2C313C;
+    width: 100%;
+    height: 100%;
+}
+
+.mainApp {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    /* border: 1px solid #343848; */
+    -webkit-box-sizing: border-box;
+}
+
+.mainApp > .topBar {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 30px;
+    /* border-bottom: 3px solid #343848; */
+    background-color: #181d23;
+    -webkit-user-select: none;
+}
+
+.topBar > .titleBar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.topBar > .titleBar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+}
+
+.titleBar > .toggleButton {
+    width: 45px;
+    height: 30px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    background-image: url('../icons/icon_menu.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.titleBar > .toggleButton:hover {
+  background-color: #272C36;
+}
+
+.titleBar > .toggleButton:active {
+  background-color: #4F9FEE;
+}
+
+.titleBar > img {
+    margin-left: 10px;
+}
+
+.titleBar > .title {
+    margin-left: 10px;
+    width: 100%;
+    line-height: 30px;
+    margin-top: 5px;
+    padding-bottom: 5px;
+    /* El siguiente es el que le dá a la barra la
+    capacidad de mover la aplicación y otras cosas. */
+    -webkit-app-region: drag;
+}
+
+.topBar > .titleBarBtns {
+    display: flex;
+    flex-direction: row;
+    width: 90px;
+    height: 30px;
+}
+
+.titleBarBtns > .topBtn {
+    width: 30px;
+    height: 30px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.titleBarBtns > .topBtn:hover {
+    background-color: #272C36;
+}
+
+.titleBarBtns > .topBtn:active {
+    background-color: #4F9FEE;
+}
+
+.titleBarBtns > .minimizeBtn {
+    background-image: url('../icons/icon_minimize.png');
+    background-size: contain;
+}
+.titleBarBtns > .maximizeBtn {
+    background-image: url('../icons/icon_maximize.png');
+    background-size: contain;
+}
+
+.titleBarBtns > .restoreBtn {
+    background-image: url('../icons/icon_restore.png');
+    background-size: contain;
+}
+
+.titleBarBtns > .closeBtn {
+    background-image: url('../icons/icon_close.png');
+    background-size: contain;
+}
+.titleBarBtns > .closeBtn:hover {
+  background-color: #ee4f4f;
+}
+
+.titleBarBtns > .closeBtn:active {
+  background-color: #4b0000;
+}
+
+.mainApp > .contentArea {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+}
+
+.contentArea > .leftMenu {
+    width: 280px;
+    height: 100%;
+    background-color: #272C36;
+    transition: 0.4s;
+}
+
+.contentArea > .contentPages {
+    width: 100%;
+    height: 100%;
+    -webkit-box-align: center;
+    -webkit-box-pack: center;
+    display: -webkit-box;
+}
+
+.iconElectron {
+  width: 200px;
+  height: 200px;
+}

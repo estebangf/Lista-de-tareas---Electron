@@ -1,22 +1,51 @@
 // Modules to control application life and create native browser window
-const {app, BrowserWindow} = require('electron')
+const { app, BrowserWindow, ipcMain } = require('electron')
 const path = require('path')
 
-function createWindow () {
+const ipc = ipcMain
+
+function createWindow() {
   // Create the browser window.
-  const mainWindow = new BrowserWindow({
-    width: 800,
+  const win = new BrowserWindow({
+    width: 1200,
     height: 600,
+    minWidth: 940,
+    minHeight: 560,
+    frame: false,
     webPreferences: {
+      nodeIntegration: true,
+      contextIsolation: false,
+      devTools: true,
       preload: path.join(__dirname, 'preload.js')
     }
   })
 
   // and load the index.html of the app.
-  mainWindow.loadFile('index.html')
+  // win.loadURL(`file://${__dirname}/index.html`);
+  win.loadFile('index.html')
+  win.setBackgroundColor('#343848')
 
-  // Open the DevTools.
-  // mainWindow.webContents.openDevTools()
+  ipc.on('minimizeApp', () => {
+    win.minimize()
+  })
+
+  ipc.on('maximizeRestoreApp', () => {
+    if (win.isMaximized()) win.restore()
+    else win.maximize()
+  })
+
+  ipc.on('closeApp', () => {
+    win.close()
+  })
+
+  // win.webContents.openDevTools()
+
+  win.on("maximize", () => {
+    win.webContents.send("isMaximized")
+  })
+  win.on("unmaximize", () => {
+    win.webContents.send("isRestored")
+  })
 }
 
 // This method will be called when Electron has finished
