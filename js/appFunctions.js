@@ -1,7 +1,7 @@
 const { ipcRenderer } = require("electron")
 const ipc = ipcRenderer
 
-var isLeftMenuAactive = true
+var isLeftMenuAactive = false
 
 ////// MINIMIZE APP
 minimizeBtn.addEventListener('click', () => {
@@ -46,3 +46,4 @@ showHideMenus.addEventListener('click', () => {
     isLeftMenuAactive = true
   }
 })
+

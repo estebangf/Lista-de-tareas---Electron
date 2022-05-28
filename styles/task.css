@@ -1,0 +1,128 @@
+#tareas .tarea {
+  margin: 12px;
+  padding: 12px 24px;
+  padding-left: 0px;
+  width: calc(100% - 48px);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: #232931;
+  border-radius: 8px;
+  align-content: center;
+  justify-content: space-between;
+}
+#tareas .tarea:hover {
+  background-color: #1d232c;
+}
+
+.tarea input {
+  margin: 0px 24px;
+}
+
+
+
+
+.tarea input[type="checkbox"]:before {
+  position: relative;
+  display: block;
+  width: 20px;
+  height: 20px;
+  border: none;
+  content: "";
+  border-radius: 5px;
+}
+
+.tarea input[type="checkbox"]:after {
+  position: relative;
+  display: block;
+  top: -20px;
+  width: 20px;
+  height: 20px;
+  left: 0px;
+  border-radius: 5px;
+  border: none;
+  content: "";
+  background-image: linear-gradient(135deg, #ffffff 0%, rgb(175, 175, 175) 100%);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.tarea input[type="checkbox"]:checked:after {
+  background-color: rgb(56, 155, 255);
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAaCAYAAACgoey0AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAX9JREFUeNpi+P//PwMNsS4QbwBiLnQ5WlqqAsRP/0PARiBmoYfFkkB8+z8qWALEjLS0mB+IL/3HDibSymJQXB7/jx/UgNSCvU4lwAbEG4DYkwi1WUxUspQZiOcRaSkIWOAKMk0Sg3jaf+IBOIVjMyQWiH8DsR+RljaTYOkBWJ5GNwRk2R+ooh9A7ETA0jwSLL0ATfEYqRpkyVc0xR+A2AyHpdFA/I9IS0F5WhRbAWIEtQQbeAXE6lhC5jeRlj4GYgVsRaYK1HBCmmWgmuyxhAwu8BpaXjNgs/gYkYbcAGIXPCGDDkCOM8eVPkCEFhE+JhX8BGJnfAkTxgC57BOVLAXlihBC2RA9Vf+k0FJQKk8nJv+jCwQi5WNyQAWxpR02wRQS8icy6CKlmMUlUUGipfOQK3lKLAbhdhIKfWZS6258kiAfzCZg6V4gZiOn0UBIAcgn63BYehK50Ke2xQxQH+3FUoqJUtJMIlYhLxAfxVJu09xiWENuMxCrUaNhCBBgAOAVfjALa5TLAAAAAElFTkSuQmCC);
+  background-size: 50%;
+}
+
+.tarea input[type="checkbox"]:disabled:after {
+  -webkit-filter: opacity(0.4);
+}
+
+.tarea input[type="checkbox"]:not(:disabled):checked:hover:after {
+  background-color: rgb(21, 119, 218);
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAaCAYAAACgoey0AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAX9JREFUeNpi+P//PwMNsS4QbwBiLnQ5WlqqAsRP/0PARiBmoYfFkkB8+z8qWALEjLS0mB+IL/3HDibSymJQXB7/jx/UgNSCvU4lwAbEG4DYkwi1WUxUspQZiOcRaSkIWOAKMk0Sg3jaf+IBOIVjMyQWiH8DsR+RljaTYOkBWJ5GNwRk2R+ooh9A7ETA0jwSLL0ATfEYqRpkyVc0xR+A2AyHpdFA/I9IS0F5WhRbAWIEtQQbeAXE6lhC5jeRlj4GYgVsRaYK1HBCmmWgmuyxhAwu8BpaXjNgs/gYkYbcAGIXPCGDDkCOM8eVPkCEFhE+JhX8BGJnfAkTxgC57BOVLAXlihBC2RA9Vf+k0FJQKk8nJv+jCwQi5WNyQAWxpR02wRQS8icy6CKlmMUlUUGipfOQK3lKLAbhdhIKfWZS6258kiAfzCZg6V4gZiOn0UBIAcgn63BYehK50Ke2xQxQH+3FUoqJUtJMIlYhLxAfxVJu09xiWENuMxCrUaNhCBBgAOAVfjALa5TLAAAAAElFTkSuQmCC);
+  background-size: 50%;
+}
+
+.tarea input[type="checkbox"]:not(:disabled):hover:after {
+  background-image: linear-gradient(135deg, #dddddd 0%, rgb(148, 148, 148) 100%);
+  background-size: contain;
+}
+
+.tarea input[type="checkbox"]:not(:disabled):hover:before {
+}
+
+.tarea .text {
+  /* width: 100%; */
+  flex: 1;
+  padding-right: 4px;
+}
+
+.tarea .text h2 {
+  padding: 0;
+  margin: 0;
+  margin-bottom: 8px;
+}
+
+.tarea .text p {
+  font-size: 16px;
+  padding: 0;
+  margin: 0;
+}
+
+.tarea .actions {
+  display: flex;
+  flex-direction: column;
+}
+
+.tarea .actions button {
+  margin-bottom: 8px;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 6px;
+  color: #FFFFFF;
+  font-size: x-small;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.danger {
+  background-color: #c93f3f;
+  color: #ebebeb !important;
+}
+
+.default {
+  background-color: #e0e0e0;
+  color: #202020 !important;
+}
+
+
+button:hover.danger {
+  background-color: #af2727;
+  cursor: pointer;
+}
+
+button:hover.default {
+  background-color: #bdbdbd;
+  cursor: pointer;
+}
