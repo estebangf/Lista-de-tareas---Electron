@@ -3,7 +3,14 @@
 
 <head>
   <link href="styles/style.css" rel="stylesheet">
+  <link href="styles/schrollBar.css" rel="stylesheet">
+  <link href="styles/titlebar.css" rel="stylesheet">
+  <link href="styles/task.css" rel="stylesheet">
+  <link href="styles/newTask.css" rel="stylesheet">
+
   <script defer src="js/appFunctions.js"></script>
+  <script defer src="js/tasksFunctions.js"></script>
+
   <title>Ejemplo aplicación personalizada</title>
 </head>
 
@@ -27,11 +34,25 @@
       <div id="mySidebar" class="leftMenu">
 
       </div>
-      <div class="contentPages">
-        <img class="iconElectron" src="images/electron.png" >
+      <div class="contentPage">
+        <form class="newTask">
+          <h2>Nueva tarea</h2>
+          <div>
+            <input type="text" name="title" id="title" placeholder="Title" focus>
+            <label for="title">Title</label>
+          </div>
+          <div>
+            <input type="text" name="description" id="description" placeholder="Description">
+            <label for="description">Description</label>
+          </div>
+          <button type="submit" onclick="saveTask()">Save</button>
+        </form>
+        <div id="tareas">
+        </div>
       </div>
     </div>
   </div>
 </body>
+
 
 </html>

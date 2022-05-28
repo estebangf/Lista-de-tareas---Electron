@@ -2,20 +2,26 @@
 const { app, BrowserWindow, ipcMain } = require('electron')
 const path = require('path')
 
+try {
+  require('electron-reloader')(module)
+} catch (_) {}
+
 const ipc = ipcMain
 
 function createWindow() {
   // Create the browser window.
   const win = new BrowserWindow({
-    width: 1200,
+    width: 400,
     height: 600,
-    minWidth: 940,
-    minHeight: 560,
+    maxWidth: 400,
+    maxHeight: 600,
+    minWidth: 400,
+    minHeight: 600,
     frame: false,
     webPreferences: {
       nodeIntegration: true,
       contextIsolation: false,
-      devTools: true,
+      devTools: false,
       preload: path.join(__dirname, 'preload.js')
     }
   })
@@ -23,14 +29,14 @@ function createWindow() {
   // and load the index.html of the app.
   // win.loadURL(`file://${__dirname}/index.html`);
   win.loadFile('index.html')
-  win.setBackgroundColor('#343848')
+  // win.setBackgroundColor('#343848')
 
   ipc.on('minimizeApp', () => {
     win.minimize()
   })
 
   ipc.on('maximizeRestoreApp', () => {
-    if (win.isMaximized()) win.restore()
+    if (win.isMaximized()) win.unmaximize()
     else win.maximize()
   })
 

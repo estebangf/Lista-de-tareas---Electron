@@ -1,0 +1,81 @@
+/* FORMULARIO DE NUEVA TAREA */
+
+.newTask {
+  padding: 24px;
+  padding-top: 0px;
+  width: calc(100% - 48px - 24px);
+  display: flex;
+  flex-direction: column;
+  background-color: #1d232c;
+  border-radius: 8px;
+  margin: 12px;
+}
+
+.newTask div {
+  width: calc(100% - 24px);
+  position: relative;
+}
+
+.newTask input+label {
+  position: absolute;
+  top: 4px;
+  left: 10.5px;
+  color: #5353fd;
+  font-size: 14px;
+  transition: top .2s, font-size .2s;
+}
+
+.newTask input::-webkit-input-placeholder {
+  color: transparent;
+}
+
+.newTask input:placeholder-shown+label {
+  left: 12.75px;
+  top: 14px;
+  width: fit-content;
+  font-size: 18px;
+  z-index: 1;
+}
+
+.newTask input:focus:placeholder-shown+label {
+  top: 4px;
+  left: 10.5px;
+  font-size: 14px;
+  /* color: #949AA7; */
+}
+
+.newTask input:focus::-webkit-input-placeholder {
+  color: transparent;
+}
+
+.newTask input {
+  width: 100%;
+  margin-bottom: 8px;
+  padding: 8px;
+  padding-top: 25px;
+  padding-left: 10px;
+  font-size: medium;
+}
+
+.newTask input:focus {
+  outline: none;
+}
+
+.newTask button {
+  margin-top: 8px;
+  background-color: #5353fd;
+  border: none;
+  padding: 10px 38px;
+  border-radius: 6px;
+  margin-left: auto;
+  color: #FFFFFF;
+  font-size: medium;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.newTask button:hover {
+  background-color: #2e2ef0;
+  cursor: pointer;
+}
